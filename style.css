@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', cursive;
+  background: #0b0c2a;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ffb6c1;
+  text-shadow: 2px 2px 10px #ff69b4;
+}
+
+.frase, .contador {
+  font-size: 1.5rem;
+  margin: 20px auto;
+  max-width: 700px;
+  font-style: italic;
+  color: #ffd6f9;
+  transition: all 0.5s ease;
+}
+
+button {
+  padding: 14px 30px;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff85c1;
+  transform: scale(1.05);
+}
+
+#mensajeFinal {
+  margin-top: 30px;
+  font-size: 1.8rem;
+  color: #ffc0cb;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Fondo estrellado */
+.estrellas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  z-index: 0;
+  animation: parpadeo 2s infinite, estrellasMover 30s linear infinite;
+  opacity: 0.15;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes estrellasMover {
+  0% { background-position: 0 0, 25px 25px; }
+  100% { background-position: 200px 400px, 225px 425px; }
+}
+
+/* Efecto flores cayendo */
+.flor {
+  position: fixed;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  background-image: url("petalo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  animation: caer 10s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+@keyframes caer {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 0.9; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
